@@ -26,7 +26,10 @@ SECRET_KEY = 'emv&lc1gsyw4zbtd14pwyh5sk)7*d)ohbd)f_ombxam15#zi5-'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 # Application definition
 
