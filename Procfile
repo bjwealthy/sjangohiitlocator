@@ -1,3 +1,3 @@
 web: python manage.py runserver
-web: gunicorn locator:main
+web: gunicorn locator.wsgi
 heroku ps:scale web=1
