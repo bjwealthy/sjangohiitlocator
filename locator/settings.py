@@ -25,7 +25,7 @@ SECRET_KEY = 'emv&lc1gsyw4zbtd14pwyh5sk)7*d)ohbd)f_ombxam15#zi5-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-hiit.herokuapp.com']
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
