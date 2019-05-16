@@ -1,0 +1,14 @@
+
+
+<form action="{% url 'add' %}" method="post">
+      {% csrf_token %}
+      <input name="username" id="username" class="form-control mb-2 text-center" placeholder="Enter your username">
+      <button type="button" onclick="getLocation(document.getElementById('username').value)" class="btn btn-outline-secondary">Track
+            and plot your location</button>
+
+
+<button id="submitAA" class="d-none" type="submit"></button>
+<input class="d-none" name="Ipaddress" id="text" type="input">
+
+
+      </form>

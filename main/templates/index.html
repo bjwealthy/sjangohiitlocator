@@ -1,0 +1,60 @@
+
+{% include 'partials/header.html' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Location Plotter</h1>
+      <p class="lead">...by Ayotycoon</p>
+      {% include 'partials/plotter.html' %}
+    </div>
+
+    <div class="container">
+      <div class="row  mb-3 text-center">
+         {% for location in data %}
+<div class="col-sm-6 col-md-4">
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{location.foruser}}</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">
+              <script>
+                document.write({{location.Ipaddress}}.length)
+              </script>
+              
+               <small class="text-muted"> plt</small></h1>
+            </ul>
+            
+            <a href="/user/{{location.foruser}}"><button type="button" class="btn btn-lg btn-block btn-outline-primary">View</button></a>
+          </div>
+    
+        </div>
+           </div>
+            {% endfor %}
+
+
+      </div>
+</div>
+
+
+
+
+{% include 'partials/footer.html' %}

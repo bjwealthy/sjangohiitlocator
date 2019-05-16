@@ -1,0 +1,68 @@
+{% include 'partials/header.html' %}
+<div class="container">
+
+    {% if error == False %}
+    <h2> Hello {{data.foruser}},</h2>
+    <br>
+    <h4>Here are your recent Plots</h4>
+
+ 
+
+    <!-- table-->
+    <table class="table table-stripped text-center">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Longititude</th>
+                <th scope="col">Latitude</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+    {% else %}
+    <div class="text-center">
+
+        <h1>...Oops</h1>
+        <h4>Seems You haven't plotted your location before</h4>
+
+        <br>
+        {% include 'partials/plotter.html' %}
+
+    </div>
+
+    {% endif %}
+</div>
+    <script>
+        function dataTransform(data) {
+            data.forEach((element, index) => {
+                           document.getElementById('tableData').innerHTML += `
+             <tr>
+                <th scope="row">${index + 1}</th>
+                <td>${element.long}</td>
+                <td>${element.lat}</td>
+                <td>${new Date(element.date).toLocaleString()}</td>
+                <td><a href="https://www.google.com/maps/search/${element.lat},${element.long}" target="_blank"><button class="btn btn-primary btn-sm">View in Maps</button></a></td>
+            </tr>
+            
+            `; 
+            });
+
+        }
+
+        dataTransform({{ data.Ipaddress }})
+
+    </script>
+
+{% include 'partials/footer.html' %}

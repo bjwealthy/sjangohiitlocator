@@ -1,0 +1,17 @@
+{% include 'partials/header.html' %}
+<div class="container text-center">
+{% if success == False %}
+<h2>Oops an error has occured</h2>
+{% else %}
+{{message}}
+
+<br>
+<a href="/user/{{user}}" class="h1 mt-4 mb-4 d-block"> <i class="fa fa-user mr-3"></i>View {{user}} 's History</a>
+
+{% endif %}
+<br>
+<a href="/" class="h3"> <i class="fa fa-arrow-left mr-2"></i>Back to home</a>
+</div>
+
+
+{% include 'partials/footer.html' %}
