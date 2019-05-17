@@ -79,12 +79,8 @@ WSGI_APPLICATION = 'locator.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'locations',
-        'USER': 'root',
-        'PASSWORD': 'new_password',
-        'HOST': '',
-        'PORT': ''
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
